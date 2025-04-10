@@ -34,9 +34,9 @@ const ContactForm = () => {
     }
     
     // Here you would normally send the data to your backend
-    // For demo purposes, we'll just simulate success
+  
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('https://rs-warehouse-1.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
