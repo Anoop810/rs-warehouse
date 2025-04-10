@@ -7,7 +7,14 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+const cors = require('cors');
+
+app.use(cors({
+  origin: "https://rs-warehouse.onrender.com", // Your frontend URL
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type,Authorization"
+}));
+
 app.use(express.json());
 
 // Routes
