@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     allowedHosts: [
-      "681b-2405-201-c-387d-928-b0f8-997-d653.ngrok-free.app"
+      "rs-warehouse.onrender.com"
     ]
   }
 })
