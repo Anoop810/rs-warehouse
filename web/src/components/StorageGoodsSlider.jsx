@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, lazy, Suspense } from 'react';
 import { Container } from 'react-bootstrap';
 import beans from '../assets/beans.webp';
 import baggrains from '../assets/baggrains.webp';
@@ -6,37 +6,15 @@ import legumesarranged from '../assets/legumesarranged.webp';
 import biscuits from '../assets/biscuits.webp';
 import drinks from '../assets/drinks.webp';
 
+const LazyGoodsCard = lazy(() => import('./GoodsCard')); // Lazy load component
+
 const goods = [
   { id: 1, title: "Grains & Beans", image: beans, description: "Agricultural products" },
   { id: 2, title: "Bulk Grains", image: baggrains, description: "Bulk grain products" },
   { id: 3, title: "Legumes", image: legumesarranged, description: "All kind of grains" },
   { id: 4, title: "Perishable goods", image: biscuits, description: "Perishable goods storage" },
-  { id: 5, title: "Packaged Beverages", image: drinks, description: "water and beverages" }
+  { id: 5, title: "Packaged Beverages", image: drinks, description: "Water and beverages" }
 ];
-
-const GoodsCard = React.memo(({ item }) => (
-  <div className="slider-item">
-    <div className="goods-card h-100">
-      <div className="position-relative overflow-hidden rounded shadow-sm h-100">
-        <img
-          loading="lazy"
-          src={item.image}
-          alt={item.title}
-          className="img-fluid w-100"
-          style={{ 
-            height: window.innerWidth <= 576 ? '180px' : '250px',
-            objectFit: 'cover',
-            maxWidth: '100%'
-          }}
-        />
-        <div className="position-absolute bottom-0 start-0 end-0 p-2 p-sm-3 bg-dark bg-opacity-75 text-white">
-          <h5 className="mb-1 fs-6">{item.title}</h5>
-          <p className="mb-0 small d-none d-sm-block">{item.description}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-));
 
 const StorageGoodsSlider = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -73,9 +51,13 @@ const StorageGoodsSlider = () => {
 
         <div className="slider-container">
           <div className="slider-track" ref={sliderRef}>
-            {[...goods, ...goods, ...goods].map((item, index) => (
-              <GoodsCard key={index} item={item} isVisible={isVisible} />
-            ))}
+            {isVisible && (
+              <Suspense fallback={<div>Loading...</div>}>
+                {[...goods, ...goods, ...goods].map((item, index) => (
+                  <LazyGoodsCard key={index} item={item} />
+                ))}
+              </Suspense>
+            )}
           </div>
         </div>
       </Container>
