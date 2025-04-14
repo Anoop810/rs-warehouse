@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors()); // Remove specific origin since we're serving from same server
+app.use(cors({ origin: '*' })); // Remove specific origin since we're serving from same server
 app.use(express.json());
 // Rate limiter
 const contactLimiter = ratelimit({
