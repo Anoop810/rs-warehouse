@@ -19,23 +19,23 @@ const services = [
   {
     id: 1,
     title: "Manpower Management",
-    description: "Arranging trained labor for warai cargo crossing, unloading/stacking bag stock, bulk repacking, and vehicle loading operations.",
+    description: "Efficient management of trained labor for cargo handling and warehouse operations.",
     icon: People,
     color: "#336633",
     path: "/services/1"
   },
   {
     id: 2,
-    title: "Cargo Vehicle Documentation",
-    description: "Handling weight slips, supervision reports, delivery vehicle weight slips, and gate passes for cargo drivers.",
+    title: "Cargo Vehicle Supervision",
+    description: "Complete supervision from weight measurement to warehouse delivery with documentation verification.",
     icon: FileEarmark,
     color: "#333399",
     path: "/services/2"
   },
   {
     id: 3,
-    title: "Cargo Planning & Reporting",
-    description: "Daily work planning, client communication via WhatsApp/email, order processing, and damage reporting for efficient cargo management.",
+    title: "Cargo Planning",
+    description: "Processing and reporting cargo quality for effective cargo management.",
     icon: ClipboardData,
     color: "#990066",
     path: "/services/3"
@@ -43,15 +43,15 @@ const services = [
   {
     id: 4,
     title: "Cargo Inspection",
-    description: "Collecting challan and weight slips, conducting rough tally, verifying container numbers with BL copy and CHA challan, and checking seal numbers.",
+    description: "Seal verification and quality inspection of cargo for safe transportation.",
     icon: Search,
     color: "#663300",
     path: "/services/4"
   },
   {
     id: 5,
-    title: "Cargo Maintenance",
-    description: "Regular cargo inspections every 15 days, maintaining cleanliness after dispatch, and scheduling fumigation after 28 days of stock holding.",
+    title: "Cargo Management",
+    description: "Expert management for the preservation and quality maintenance of cargo.",
     icon: Tools,
     color: "#996633",
     path: "/services/5"
@@ -59,15 +59,15 @@ const services = [
   {
     id: 6,
     title: "Cargo Repacking",
-    description: "Repacking of loose goods to preserve & store for further processing and distribution",
+    description: "Professional repacking of bulk and loose goods for safe storage and transportation.",
     icon: Box,
     color: "#009933",
     path: "/services/6"
   },
   {
     id: 7,
-    title: "Cargo Management",
-    description: "Cargo management services to ensure the safe and efficient movement of goods.",
+    title: "Supervised Cargo Management",
+    description: "Cargo management under best and experienced supervisors for optimal results.",
     icon: ListTask,
     color: "#6600cc",
     path: "/services/7"

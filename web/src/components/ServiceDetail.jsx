@@ -17,91 +17,91 @@ const services = [
   {
     id: 1,
     title: "Manpower Management",
-    description: "Arranging trained labor for warai cargo crossing, unloading/stacking bag stock, bulk repacking, and vehicle loading operations.",
+    description: "Efficient management of trained labor for cargo handling and warehouse operations.",
     icon: People,
     color: "#336633",
     details: [
-      "Arranging trained labor for warai cargo crossing",
-      "Arranging trained labor for unloading and stacking bag stock in the warehouse",
-      "Arranging special labor for bulk repacking cargo for loading and unloading purposes",
-      "Arranging trained labor for loading cargo in vehicles"
+      "Professional labor management for cargo handling",
+      "Trained workforce for warehouse operations",
+      "Efficient resource allocation and supervision"
     ]
   },
   {
     id: 2,
-    title: "Cargo Vehicle Documentation",
-    description: "Handling weight slips, supervision reports, delivery vehicle weight slips, and gate passes for cargo drivers.",
+    title: "Cargo Vehicle Supervision",
+    description: "Handling cargo from weight measuring point till warehouse, inspecting documentation with weight slip till delivery.",
     icon: FileEarmark,
     color: "#333399",
     details: [
-      "Handover inward container weight slip, supervision report, and delivery vehicle weight slip to the party representative",
-      "Handover gate pass to cargo drivers"
+      "Complete supervision from weight measurement to delivery",
+      "Documentation verification and management",
+      "Weight slip inspection and validation",
+      "Quality control during transportation"
     ]
   },
   {
     id: 3,
-    title: "Cargo Planning & Reporting",
-    description: "Daily work planning, client communication via WhatsApp/email, order processing, and damage reporting for efficient cargo management.",
+    title: "Cargo Planning",
+    description: "Processing and reporting cargo quality for effective cargo management.",
     icon: ClipboardData,
     color: "#990066",
     details: [
-      "Planning a day before for cargo work",
-      "Sending product images through WhatsApp or emails",
-      "Receiving delivery or unloading orders from clients",
-      "Informing delivery parties to pick up consignments from the warehouse",
-      "Unloading and processing warehousing stock in a clean and safe environment while optimizing space utilization",
-      "Informing parties if cargo is damaged"
+      "Quality assessment and reporting",
+      "Efficient cargo processing planning",
+      "Regular quality monitoring",
+      "Detailed reporting system"
     ]
   },
   {
     id: 4,
     title: "Cargo Inspection",
-    description: "Collecting challan and weight slips, conducting rough tally, verifying container numbers with BL copy and CHA challan, and checking seal numbers.",
+    description: "Seal verification and quality inspection of cargo for safe transportation.",
     icon: Search,
     color: "#663300",
     details: [
-      "Collecting challan and weight slip from container drivers",
-      "Conducting a rough tally of cargo weight",
-      "Checking container number with BL copy and CHA challan",
-      "Cross-verifying cargo weight slip with BL copy, yard weight slip, and warehouse weight slip",
-      "Checking seal number with CHA challan"
+      "Seal verification and validation",
+      "Quality inspection protocols",
+      "Safety compliance checks",
+      "Documentation verification"
     ]
   },
   {
     id: 5,
-    title: "Cargo Maintenance",
-    description: "Regular cargo inspections every 15 days, maintaining cleanliness after dispatch, and scheduling fumigation after 28 days of stock holding.",
+    title: "Cargo Management",
+    description: "Expert management for the preservation and quality maintenance of cargo.",
     icon: Tools,
     color: "#996633",
     details: [
-      "Inspecting cargo every 15 days for quality purposes",
-      "Maintaining cleanliness of stock after dispatching each vehicle",
-      "Reporting clients for fumigation of lots after completing 28 days of stock holding",
-      "Holding repeat inspections every 28 days until the lot is cleared"
+      "Quality preservation techniques",
+      "Regular maintenance checks",
+      "Storage condition monitoring",
+      "Quality control measures"
     ]
   },
   {
     id: 6,
     title: "Cargo Repacking",
-    description: "Repacking of loose goods to preserve & store for further processing and distribution",
+    description: "Professional repacking of bulk and loose goods for safe storage and transportation.",
     icon: Box,
     color: "#009933",
     details: [
-      "Repacking of loose goods for preservation",
-      "Storage preparation for further processing",
-      "Distribution-ready packaging"
+      "Bulk goods repacking",
+      "Loose goods consolidation",
+      "Safe packaging solutions",
+      "Quality preservation during repacking"
     ]
   },
   {
     id: 7,
-    title: "Cargo Management",
-    description: "Cargo management services to ensure the safe and efficient movement of goods.",
+    title: "Supervised Cargo Management",
+    description: "Cargo management under best and experienced supervisors for optimal results.",
     icon: ListTask,
     color: "#6600cc",
     details: [
-      "Safe and efficient movement of goods",
-      "Inventory tracking and management",
-      "Quality control and assurance"
+      "Expert supervision of cargo operations",
+      "Quality control by experienced professionals",
+      "Efficient management practices",
+      "Optimal resource utilization"
     ]
   },
   {

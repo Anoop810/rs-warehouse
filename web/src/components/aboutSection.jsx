@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import shippingContainers from '../assets/shippingContainers.webp';
+import shippingContainers from '../assets/shippingContainers (1).webp';
 
 const AboutSection = () => {
   return (
