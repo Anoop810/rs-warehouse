@@ -8,28 +8,23 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+// === Middleware ===
 app.use(cors());
 app.use(express.json());
 
-// Rate limiting
+// === Rate limiting ===
 const limiter = rateLimit({
-  windowMs: 60 * 1000,
+  windowMs: 60 * 1000, // 1 minute
   max: 5,
   message: { success: false, error: 'Too many requests. Please try again later.' },
 });
 app.use('/api/contact', limiter);
 
-// Serve frontend
-app.use(express.static(path.join(__dirname, 'frontendbuild')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontendbuild', 'index.html'));
-});
-
-// Contact form route
+// === Contact API Route ===
 app.post('/api/contact', async (req, res) => {
   const { name, email, phone, subject, message } = req.body;
 
+  // === Validation ===
   if (!name || !email || !subject || !message)
     return res.status(400).json({ success: false, error: 'Missing fields' });
 
@@ -40,6 +35,7 @@ app.post('/api/contact', async (req, res) => {
   if (message.length < 10)
     return res.status(400).json({ success: false, error: 'Message too short' });
 
+  // === Nodemailer Setup ===
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -49,6 +45,7 @@ app.post('/api/contact', async (req, res) => {
   });
 
   try {
+    // Admin Notification
     await transporter.sendMail({
       from: `"Portfolio" <${process.env.MAIL_USER}>`,
       to: process.env.MAIL_USER,
@@ -63,6 +60,7 @@ app.post('/api/contact', async (req, res) => {
       `
     });
 
+    // User Confirmation
     await transporter.sendMail({
       from: `"R.S WareHouse" <${process.env.MAIL_USER}>`,
       to: email,
@@ -77,11 +75,20 @@ app.post('/api/contact', async (req, res) => {
 
     res.status(200).json({ success: true });
   } catch (err) {
-    console.error('Error sending email:', err);
+    console.error('❌ Error sending email:', err);
     res.status(500).json({ success: false, error: 'Failed to send email' });
   }
 });
 
+// === Serve Frontend ===
+// Replace 'client/dist' with your actual frontend build folder
+app.use(express.static(path.join(__dirname,  'dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
+// === Start Server ===
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
 });
