@@ -10,9 +10,9 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: 'https://rs-warehouse.onrender.com',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: "http://localhost:5173", // Restore for local frontend dev
+  methods: "GET,POST,PUT,DELETE",
+  allowedHeaders: "Content-Type,Authorization"
 }));
 app.use(express.json());
 // Rate limiter
@@ -22,6 +22,9 @@ const contactLimiter = ratelimit({
   message: { success: false, error: "Too many requests. Please try again later." }
 });
 app.use('/api/contact', contactLimiter);
+
+// Serve static files from the dist folder
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // API Route
 app.post('/api/contact', async (req, res) => {
@@ -88,12 +91,9 @@ if (message.length < 10) {
   }
 });
 
-// Serve frontend build folder
-app.use(express.static(path.join(__dirname, "frontendbuild")));
-
 // Handle all routes by serving index.html
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontendbuild", "index.html"));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 app.listen(PORT, () => console.log(`✅ Server running on http://localhost:${PORT}`));
